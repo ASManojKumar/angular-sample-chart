@@ -1,0 +1,26 @@
+{
+  "name": "angular-sample-chart",
+  "authors": [
+    "Manoj"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.4.8",
+    "angular-route": "1.4.8",
+    "angular-messages": "1.4.8",
+    "angular-ui-router": "~0.2.15",
+    "lodash": "~4.5.1",
+    "moment": "^2.12.0"
+  },
+  "resolutions": {
+    "angular": "1.4.8",
+    "angular-route": "1.4.8"
+  }
+}

@@ -1,0 +1,37 @@
+<html>
+
+<head>
+    <title>Angular Sample Chart</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div ng-app="sample">
+        <div ng-controller="filterController as filter">
+            <h3>Filter items using angular</h3>
+            <table ng-repeat="table in filter.results">
+                <input type="text" placeholder="enter for filter" ng-change="filter.filterDetails(enteredValue);" ng-model="enteredValue" />
+                <tbody>
+                    <td>{{table.name}}</td>
+                    <td>{{table.time}}</td>
+                    <td>{{table.source}}</td>
+                    <td>{{table.dest}}</td>
+                </tbody>
+            </table>
+            <!-- <button ng-click="filter.filterDetails();">click</button> -->
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <!-- <script src="bower_components/angular/angular.min.js" type="text/javascript"></script>
+    <script src="bower_components/angular-ui-router/angular-ui-router.min.js" type="text/javascript"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js" type="text/javascript"></script>
+    <script src="bower_components/loadash/lodash.js" type="text/javascript"></script>
+    <script src="bower_components/modernizr-custom.js" type="text/javascript"></script>
+    <script src="node_modules/chart.js/dist/Chart.bundle.js" type="text/javascript"></script> -->
+    <script src="dist/js/app.min.js"></script>
+</body>
+
+</html>
