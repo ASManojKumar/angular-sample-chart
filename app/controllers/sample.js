@@ -1,46 +1,47 @@
-var app = angular.module('sample', []);
-app.controller('filterController', [function() {
+var app = angular.module('sample');
 
-        var self = this;
+angular.module('sample').controller('firstController', 'BenchAPIService' [function(BenchAPIService) {
 
-        self.tableData = [{
-            "name": "manoj",
-            "time": "morning",
-            "source": "blr",
-            "dest": "mas"
-        }, {
-            "name": "manoj",
-            "time": "morning",
-            "source": "blr",
-            "dest": "mas"
-        }, {
-            "name": "asdf",
-            "time": "evening",
-            "source": "ran",
-            "dest": "blr"
-        }, {
-            "name": "ram",
-            "time": "noon",
-            "source": "cbe",
-            "dest": "mum"
-        }];
+    var self = this;
 
-        self.results = [];
+    debugger
 
-        self.filterDetails = function(enteredValue) {
-            angular.forEach(self.tableData, function(value) {
-                if ((value.name === enteredValue) || (value.time === enteredValue) || (value.source === enteredValue) || (value.dest === enteredValue)) {
-                    self.results.shift();
-                    self.results.push({
-                        name: value.name,
-                        time: value.time,
-                        source: value.source,
-                        dest: value.dest
-                    });
-                };
-            });
-        };
+    getBenchEmployees();
 
+    function getBenchEmployees() {
+        $scope.loading = true;
+        BenchAPIService
+            .getBenchEmployees(authenticationRequired)
+            .then(getBenchEmployeesSuccessHandler, failureHandler)
+            .finally(finallyHandler);
     }
 
-]);
+    function getBenchEmployeesSuccessHandler(response) {
+        var result = response.data.response;
+        $scope.benchPieChartData = generateBenchPieChart($scope.benchList);
+    }
+
+    function generateBenchPieChart(benchList) {
+        var pieChartData = [];
+        var pieChartData = [{ "label": "Java", "count": 0 }, { "label": ".Net", "count": 0 }, { "label": "QA", "count": 0 }, { "label": "Other", "count": 0 }];
+
+        for (var i = 0; i < benchList.length; i++) {
+            if (benchList[i].skillName == skillObj[0]) {
+                pieChartData[0]["count"] = pieChartData[0]["count"] + 1;
+            } else if (benchList[i].skillName == skillObj[1]) {
+                pieChartData[1]["count"] = pieChartData[1]["count"] + 1;
+            } else if (benchList[i].skillName == skillObj[2]) {
+                pieChartData[2]["count"] = pieChartData[2]["count"] + 1;
+            } else {
+                pieChartData[3]["count"] = pieChartData[3]["count"] + 1;
+            }
+
+        }
+        return pieChartData;
+    }
+
+    // (function initialize() {
+    //     generateBenchPieChart();
+    // })();
+
+}]);

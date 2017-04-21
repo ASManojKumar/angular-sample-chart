@@ -22,7 +22,6 @@ var knownOptions = {
 };
 
 var options = minimist(process.argv.slice(2), knownOptions);
-var multiselectStyles = 'bower_components/angular-multi-select/*.css';
 
 var scriptRoot = 'app';
 var scriptFolder = scriptRoot + '/**/*.js';
@@ -101,7 +100,6 @@ gulp.task('clean', function() {
 });
 
 gulp.task('default', function() {
-    // gulp.start('config');
     gulp.start('templates');
     gulp.start('sass');
     gulp.start('vendorCss');
