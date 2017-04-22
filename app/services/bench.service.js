@@ -1,11 +1,9 @@
-var app = angular.module('sample');
-angular.module("sample").factory("BenchAPIService", ['$http', 'ENV', function($http, ENV) {
+angular.module("sample")
+.factory("BenchAPIService", ['$http', function($http) {
 
     var benchAPI = {};
     benchAPI.getBenchEmployees = function() {
-        $http.get('json/data.json').success(function(data) {
-            $scope.phones = data;
-        });
+        return $http.get('json/data.json');
     };
     return benchAPI;
 }]);

@@ -1,5 +1,4 @@
 (function() {
-    var app = angular.module('sample', []);
     angular.module('sample').
     service('chartsService', ['$http', '$rootScope', '$window',
         function($http, $rootScope, $window) {

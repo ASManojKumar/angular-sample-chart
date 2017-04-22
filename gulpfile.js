@@ -38,13 +38,24 @@ gulp.task('scripts', function() {
         .pipe(gulp.dest('dist/js'));
 });
 
+var scriptRootJSON = 'app';
+var folderJSON = scriptRootJSON + '/**/*.json';
+
+gulp.task('scripts', function() {
+    return gulp.src(folderJSON)
+    .pipe(plumber())
+    .pipe(sourcemaps.init())
+    .pipe(concat('data.json'))
+    .pipe(gulp.dest('dist/json'));
+});
+
 gulp.task('sass', function() {
-    return gulp.src('css/ls-styles.scss')
+    return gulp.src('css/*.css')
         .pipe(plumber())
         .pipe(sourcemaps.init())
         .pipe(sass({
             //outputStyle: 'compressed',
-            includePaths: ['bower_components/bootstrap-sass/assets/stylesheets/']
+            includePaths: ['bower_components/bootstrap/assets/dist/css/']
         }))
         .pipe(postcss([autoprefixer({ browsers: ['last 2 versions'] })]))
         .pipe(sourcemaps.write())
@@ -52,7 +63,9 @@ gulp.task('sass', function() {
 });
 
 gulp.task('vendorCss', function() {
-    return gulp.src([multiselectStyles])
+    return gulp.src([
+        'bower_components/bootstrap/assets/dist/css/*.css'
+        ])
         .pipe(plumber())
         .pipe(concat('vendor.css'))
         .pipe(gulp.dest('dist/css'));

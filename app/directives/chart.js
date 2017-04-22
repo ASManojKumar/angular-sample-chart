@@ -1,4 +1,4 @@
-var app = angular.module('sample', []);
+var app = angular.module('sample');
 angular.module('sample')
     .directive('chart', ['chartsService',
         function(chartsService) {

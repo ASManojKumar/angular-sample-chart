@@ -1,6 +1,7 @@
-var app = angular.module('sample');
+var app = angular.module('sample', []);
 
-angular.module('sample').controller('firstController', 'BenchAPIService' [function(BenchAPIService) {
+angular.module('sample').controller('firstController', ['$scope', 'BenchAPIService', 
+function($scope, BenchAPIService) {
 
     var self = this;
 
@@ -11,9 +12,8 @@ angular.module('sample').controller('firstController', 'BenchAPIService' [functi
     function getBenchEmployees() {
         $scope.loading = true;
         BenchAPIService
-            .getBenchEmployees(authenticationRequired)
-            .then(getBenchEmployeesSuccessHandler, failureHandler)
-            .finally(finallyHandler);
+            .getBenchEmployees()
+            .then(getBenchEmployeesSuccessHandler);
     }
 
     function getBenchEmployeesSuccessHandler(response) {

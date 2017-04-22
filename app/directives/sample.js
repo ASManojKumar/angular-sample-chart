@@ -1,6 +1,6 @@
 (function() {
     'use strict';
-    var app = angular.module('sample', []);
+    var app = angular.module('sample');
     angular.module('sample')
         .directive('firstOne', function() {
             return {
