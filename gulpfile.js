@@ -34,29 +34,28 @@ gulp.task('scripts', function() {
         .pipe(concat('app.min.js'))
         .pipe(ngAnnotate())
         .pipe(uglify())
-        //.pipe(sourcemaps.write())
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest('dist/js'));
 });
 
-var scriptRootJSON = 'app';
-var folderJSON = scriptRootJSON + '/**/*.json';
+// var scriptRootJSON = 'app';
+// var folderJSON = scriptRootJSON + '/**/*.json';
 
-gulp.task('scripts', function() {
-    return gulp.src(folderJSON)
-    .pipe(plumber())
-    .pipe(sourcemaps.init())
-    .pipe(concat('data.json'))
-    .pipe(gulp.dest('dist/json'));
-});
+// gulp.task('scripts', function() {
+//     return gulp.src(folderJSON)
+//     .pipe(plumber())
+//     .pipe(sourcemaps.init())
+//     .pipe(concat('data.json'))
+//     .pipe(gulp.dest('dist/json'));
+// });
 
 gulp.task('sass', function() {
-    return gulp.src('css/*.css')
+    return gulp.src([
+        'css/*.css',
+        'bower_components/bootstrap/assets/dist/css/*.css'
+        ])
         .pipe(plumber())
         .pipe(sourcemaps.init())
-        .pipe(sass({
-            //outputStyle: 'compressed',
-            includePaths: ['bower_components/bootstrap/assets/dist/css/']
-        }))
         .pipe(postcss([autoprefixer({ browsers: ['last 2 versions'] })]))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('dist/css'));
@@ -77,7 +76,7 @@ gulp.task('vendorScripts', function() {
             'bower_components/**/angular-route.min.js',
             'bower_components/**/bootstrap/js/bootstrap.js',
             'bower_components/**/angular-ui-router.min.js',
-            'bower_components/**/loadash.js'
+            'bower_components/**/lodash.min.js'
         ])
         .pipe(plumber())
         .pipe(concat('vendor.js'))
