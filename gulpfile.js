@@ -52,7 +52,7 @@ gulp.task('scripts', function() {
 gulp.task('sass', function() {
     return gulp.src([
         'css/*.css',
-        'bower_components/bootstrap/assets/dist/css/*.css'
+        'bower_components/bootstrap/dist/css/*.css'
         ])
         .pipe(plumber())
         .pipe(sourcemaps.init())
