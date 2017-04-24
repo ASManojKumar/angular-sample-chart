@@ -7360,6 +7360,10 @@ h3 {
     margin: 20px;
 }
 
+.col-md-6 select {
+	margin-bottom: 20px;
+}
+
 @media(max-width: 992px) {
     .col-md-6 {
         width: 100%;

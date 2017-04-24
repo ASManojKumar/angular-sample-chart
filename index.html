@@ -13,6 +13,9 @@
                 <div class="col-md-6">
                     <div class="page-header text-center">
                         <h4>{{first.firstChart}}</h4>
+                        <select ng-init="first.chart = chartOptions[0]; first.updateLineChart()" ng-model="chart" ng-change="updateLineChart(chart)" ng-options="c.name for c in chartOptions track by c.id">
+                            <option selected disabled hidden>Select</option>
+                        </select>
                         <div class="chart-div">
                             <chart id="utilization" chart-type="'line'" chart-data="utilizationChartData" dataset-label="'Utilization'" legend-display="true" h-axis-prop="'date'" y-axis-prop="'utilization'" y-scale-suffix="%" h-scale-label="Month" y-scale-label="Utilization" y-scale-min="50" y-scale-max="100" date-type="'true'"></chart>
                         </div>
@@ -21,6 +24,9 @@
                 <div class="col-md-6">
                     <div class="page-header text-center">
                         <h4>{{first.secondChart}}</h4>
+                        <select ng-init="first.chart = chartOptions[0]; first.updatePieChart()" ng-model="chart" ng-change="updatePieChart(chart)" ng-options="c.name for c in chartOptions track by c.id">
+                            <option selected disabled hidden>Select</option>
+                        </select>
                         <div class="chart-div">
                             <chart id="bench-skillwisePieChart" chart-type="'pie'" chart-data="benchPieChartData" dataset-label="'BenchSkillPieChart'" h-axis-prop="'label'" y-axis-prop="'count'" y-scale-suffix="" h-scale-label="Designation" y-scale-label="Count" date-type="'false'" legend-display="true"> </chart>
                         </div>

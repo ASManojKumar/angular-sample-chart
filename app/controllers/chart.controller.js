@@ -148,6 +148,42 @@ angular.module('sample').controller('firstController', ['$scope', 'createChartSe
             return pieChartData;
         }
 
+        $scope.chartOptions = [{
+            id: 1,
+            name: "Option 1"
+        }, {
+            id: 2,
+            name: "Option 2"
+        }];
+
+        $scope.updateLineChart = function(chart) {
+            if(chart && chart.id == 1) {
+                createChartService
+                .getChartData()
+                .then(utilizationListSuccessHandler, failureHandler)
+                .finally(finallyHandler);
+            } else {
+                createChartService
+                .getChartDataOption2()
+                .then(utilizationListSuccessHandler, failureHandler)
+                .finally(finallyHandler);
+            }
+        }
+
+        $scope.updatePieChart = function(chart) {
+            if(chart && chart.id == 1) {
+                createChartService
+                .getPieChartData()
+                .then(getBenchEmployeesSuccessHandler, failureHandler)
+                .finally(finallyHandler);
+            } else {
+                createChartService
+                .getPieChartDataOption2()
+                .then(getBenchEmployeesSuccessHandler, failureHandler)
+                .finally(finallyHandler);
+            }
+        }
+
         function failureHandler(error) {
             console.error('ERROR: Failed in XHR : ' + error);
         }
