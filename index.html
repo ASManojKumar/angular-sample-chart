@@ -2,8 +2,7 @@
 
 <head>
     <title>Angular Sample Chart</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/vendor.css">
 </head>
 
 <body>
@@ -13,7 +12,7 @@
             <div class="col-md-12">
                 <div class="col-md-6">
                     <div class="page-header text-center">
-                        <h4>Sample Line Chart</h4>
+                        <h4>{{first.firstChart}}</h4>
                         <div class="chart-div">
                             <chart id="utilization" chart-type="'line'" chart-data="utilizationChartData" dataset-label="'Utilization'" legend-display="true" h-axis-prop="'date'" y-axis-prop="'utilization'" y-scale-suffix="%" h-scale-label="Month" y-scale-label="Utilization" y-scale-min="50" y-scale-max="100" date-type="'true'"></chart>
                         </div>
@@ -21,7 +20,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="page-header text-center">
-                        <h4>Sample Pie chart</h4>
+                        <h4>{{first.secondChart}}</h4>
                         <div class="chart-div">
                             <chart id="bench-skillwisePieChart" chart-type="'pie'" chart-data="benchPieChartData" dataset-label="'BenchSkillPieChart'" h-axis-prop="'label'" y-axis-prop="'count'" y-scale-suffix="" h-scale-label="Designation" y-scale-label="Count" date-type="'false'" legend-display="true"> </chart>
                         </div>

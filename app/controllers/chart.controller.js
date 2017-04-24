@@ -5,6 +5,9 @@ angular.module('sample').controller('firstController', ['$scope', 'createChartSe
 
         var self = this;
 
+        self.firstChart = "Sample Line Chart";
+        self.secondChart = "Sample Pie Chart";
+
         var stateObj = { 0: "Kannada", 1: "Tamil", 2: "Telugu", 3: "Others" };
 
         function generateUtilizationChartData(utilizations) {
