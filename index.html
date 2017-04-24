@@ -3,6 +3,7 @@
 <head>
     <title>Angular Sample Chart</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -10,15 +11,18 @@
         <div ng-controller="firstController as first">
             <h3>Angular Chart Data</h3>
             <div class="row col-md-12">
-                <div class="chart-div">
-                    <chart id="bench-skillwisePieChart" chart-type="'pie'" chart-data="benchPieChartData" dataset-label="'BenchSkillPieChart'" h-axis-prop="'label'" y-axis-prop="'count'" y-scale-suffix="" h-scale-label="Designation" y-scale-label="Count" date-type="'false'" legend-display="true"> </chart>
+                <div class="col-md-6">
+                    <div class="page-header text-center">
+                        <h4>Utilization</h4>
+                        <div class="chart-div">
+                            <chart id="utilization" chart-type="'line'" chart-data="utilizationChartData" dataset-label="'Utilization'" legend-display="true" h-axis-prop="'date'" y-axis-prop="'utilization'" y-scale-suffix="%" h-scale-label="Month" y-scale-label="Utilization" y-scale-min="50" y-scale-max="100" date-type="'true'"></chart>
+                        </div>
+                    </div>
                 </div>
-                <!-- {{first.valueSet.name}}
-                {{first.valueSet.state}}
-                {{first.valueSet.city}} -->
             </div>
         </div>
     </div>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="js/vendor.js"></script>
     <script src="js/app.min.js"></script>
 </body>

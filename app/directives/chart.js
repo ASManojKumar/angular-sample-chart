@@ -173,15 +173,15 @@ angular.module('sample')
                     };
                 }
 
-                if (element.context.id === 'profitability') {
-                    chartOptions.tooltips = {
-                        callbacks: {
-                            label: function(tooltipItem, data) {
-                                return 'Click for more details';
-                            }
-                        }
-                    }
-                }
+                // if (element.context.id === 'profitability') {
+                //     chartOptions.tooltips = {
+                //         callbacks: {
+                //             label: function(tooltipItem, data) {
+                //                 return 'Click for more details';
+                //             }
+                //         }
+                //     }
+                // }
 
 
 

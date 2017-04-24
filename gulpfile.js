@@ -43,16 +43,16 @@ gulp.task('scripts', function() {
 
 // gulp.task('scripts', function() {
 //     return gulp.src(folderJSON)
-//     .pipe(plumber())
-//     .pipe(sourcemaps.init())
-//     .pipe(concat('data.json'))
-//     .pipe(gulp.dest('dist/json'));
+//         .pipe(plumber())
+//         .pipe(sourcemaps.init())
+//         .pipe(concat('data.json'))
+//         .pipe(gulp.dest('dist/json'));
 // });
 
 gulp.task('sass', function() {
     return gulp.src([
-        'css/*.css',
-        'bower_components/bootstrap/dist/css/*.css'
+            'css/*.css',
+            'bower_components/bootstrap/dist/css/*.css'
         ])
         .pipe(plumber())
         .pipe(sourcemaps.init())
@@ -63,7 +63,7 @@ gulp.task('sass', function() {
 
 gulp.task('vendorCss', function() {
     return gulp.src([
-        'bower_components/bootstrap/assets/dist/css/*.css'
+            'bower_components/bootstrap/assets/dist/css/*.css'
         ])
         .pipe(plumber())
         .pipe(concat('vendor.css'))
@@ -76,7 +76,9 @@ gulp.task('vendorScripts', function() {
             'bower_components/**/angular-route.min.js',
             'bower_components/**/bootstrap/js/bootstrap.js',
             'bower_components/**/angular-ui-router.min.js',
-            'bower_components/**/lodash.min.js'
+            'bower_components/**/lodash.min.js',
+            'bower_components/**/Chart.bundle.js',
+            'bower_components/**/Chart.Zoom.min.js'
         ])
         .pipe(plumber())
         .pipe(concat('vendor.js'))
