@@ -5,5 +5,8 @@ angular.module("sample")
         chartData.getChartData = function() {
             return $http.get('json/data.json');
         };
+        chartData.getPieChartData = function() {
+            return $http.get('json/dataForPie.json');
+        };
         return chartData;
     }]);
