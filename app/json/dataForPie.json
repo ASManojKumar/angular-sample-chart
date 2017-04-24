@@ -1,0 +1,76 @@
+{
+    "response": {
+        "successMsg": "Data Retrived Succesfully",
+        "successObject": [
+
+            {
+                "stateName": "Kannada"
+            }, {
+                "stateName": "Tamil"
+            }, {
+                "stateName": "Telugu"
+            }, {
+                "stateName": "Telugu"
+            }, {
+                "stateName": "Tamil"
+            }, {
+                "stateName": "Hindi"
+            }, {
+                "stateName": "Tamil"
+            }, {
+                "stateName": "Tamil"
+            }, {
+                "stateName": "Kannada"
+            }, {
+                "stateName": "Kannada"
+            }, {
+                "stateName": "Telugu"
+            }, {
+                "stateName": "Tamil"
+            }, {
+                "stateName": "Kannada"
+            }, {
+                "stateName": "Telugu"
+            }, {
+                "stateName": "Kannada"
+            }, {
+                "stateName": "Tamil"
+            }, {
+                "stateName": "Kannada"
+            }, {
+                "stateName": "Kannada"
+            }, {
+                "stateName": "Kannada"
+            }, {
+                "stateName": "Drupal"
+            }, {
+                "stateName": "Telugu"
+            }, {
+                "stateName": "Tamil"
+            }, {
+                "stateName": "Bigdata"
+            }, {
+                "stateName": "Kannada"
+            }, {
+                "stateName": "Tamil"
+            }, {
+                "stateName": "Kannada"
+            }, {
+                "stateName": "Kannada"
+            }, {
+                "stateName": "Tamil"
+            }, {
+                "stateName": "Kannada"
+            }, {
+                "stateName": "Kannada"
+            }, {
+                "stateName": "Kannada"
+            }, {
+                "stateName": "Kannada"
+            }, {
+                "stateName": "Hindi"
+            }
+        ]
+    },
+    "status": "OK"
+}
